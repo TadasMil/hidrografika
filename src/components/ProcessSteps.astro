@@ -1,0 +1,55 @@
+---
+import { siteConfig } from '../data/site';
+
+const { process } = siteConfig;
+---
+
+<section class="py-16 bg-gray-950">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Our Process</h2>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+        Six meticulous steps to a perfect finish
+      </p>
+    </div>
+
+    <div class="max-w-5xl mx-auto">
+      <div class="space-y-8">
+        {process.map((step, index) => (
+          <article class="flex flex-col md:flex-row gap-6 items-start">
+            <!-- Step Number -->
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500 to-cyan-700 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+                <span class="text-2xl font-bold text-white">{step.step}</span>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="flex-1 bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-cyan-500/50 transition-all">
+              <h3 class="text-xl font-bold text-white mb-2">{step.title}</h3>
+              <p class="text-gray-400 leading-relaxed">{step.description}</p>
+            </div>
+
+            <!-- Connector Line (not on last item) -->
+            {index < process.length - 1 && (
+              <div class="hidden md:block absolute left-8 mt-20 w-0.5 h-8 bg-gradient-to-b from-cyan-500 to-transparent" aria-hidden="true"></div>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <p class="text-gray-500 mb-6">Ready to start your project?</p>
+      <a
+        href="/contact"
+        class="inline-flex items-center px-8 py-3 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition-all shadow-lg shadow-cyan-500/30"
+      >
+        Get Started Today
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

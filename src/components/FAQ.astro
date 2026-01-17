@@ -1,0 +1,68 @@
+---
+import { siteConfig } from '../data/site';
+
+const { faqs } = siteConfig;
+---
+
+<section class="py-16 bg-gray-950">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+        Everything you need to know about hydrographics
+      </p>
+    </div>
+
+    <div class="max-w-3xl mx-auto space-y-4">
+      {faqs.map((faq, index) => (
+        <details
+          class="group bg-gray-900 rounded-lg border border-gray-800 hover:border-cyan-500/50 transition-all overflow-hidden"
+        >
+          <summary
+            class="flex justify-between items-center cursor-pointer p-6 font-semibold text-white text-lg list-none"
+          >
+            <span class="pr-8">{faq.question}</span>
+            <svg
+              class="w-6 h-6 text-cyan-500 flex-shrink-0 transition-transform group-open:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-6 pt-2">
+            <p class="text-gray-400 leading-relaxed">{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <div class="text-center mt-12">
+      <p class="text-gray-400 mb-4">Still have questions?</p>
+      <a
+        href="/contact"
+        class="inline-flex items-center px-6 py-3 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition-all shadow-lg shadow-cyan-500/30"
+      >
+        Contact Us
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Ensure proper focus styles for accessibility */
+  details summary:focus {
+    outline: 2px solid #06b6d4;
+    outline-offset: 2px;
+  }
+
+  /* Remove default marker */
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

@@ -1,0 +1,172 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import { siteConfig } from '../data/site';
+---
+
+<Layout
+  title="About Us"
+  description="Learn about HydroGraphix Pro - your trusted experts in professional water transfer printing and custom finishes since 2015."
+>
+  <Hero
+    title="About HydroGraphix Pro"
+    subtitle="Transforming ordinary into extraordinary since 2015"
+    compact
+  />
+
+  <!-- Story Section -->
+  <section class="py-16 bg-gray-950">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="prose prose-invert prose-lg max-w-none">
+          <h2 class="text-3xl font-bold text-white mb-6">Our Story</h2>
+          <div class="text-gray-400 leading-relaxed space-y-4">
+            <p>
+              Founded in 2015, HydroGraphix Pro began with a simple mission: to bring premium hydrographics services to Texas and provide our customers with finishes that exceed expectations. What started as a small shop with one dipping tank has grown into a full-service facility with multiple locations and a reputation for quality that extends across the state.
+            </p>
+            <p>
+              Our founder, a lifelong automotive enthusiast, discovered hydrographics while customizing his own vehicle and immediately recognized the potential to help others transform their projects. With backgrounds in automotive restoration and custom fabrication, our team brings decades of combined experience to every project.
+            </p>
+            <p>
+              Today, we serve individual enthusiasts, commercial clients, and everyone in between. From custom automotive builds to tactical firearms, from sporting equipment to industrial applications, we've dipped thousands of items and built lasting relationships with our customers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="py-16 bg-gray-900">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-white mb-4">Our Values</h2>
+        <p class="text-xl text-gray-400">What sets us apart</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <article class="bg-gray-950 rounded-lg p-8 border border-gray-800 text-center">
+          <div class="text-5xl mb-4">🎯</div>
+          <h3 class="text-xl font-bold text-white mb-3">Precision</h3>
+          <p class="text-gray-400">
+            Every project receives meticulous attention to detail. We don't cut corners, and we don't rush the process. Your item gets the time and care it deserves.
+          </p>
+        </article>
+
+        <article class="bg-gray-950 rounded-lg p-8 border border-gray-800 text-center">
+          <div class="text-5xl mb-4">💎</div>
+          <h3 class="text-xl font-bold text-white mb-3">Quality</h3>
+          <p class="text-gray-400">
+            We use only premium films, professional-grade base coats, and high-quality clear coats. Your finish is built to last, not just to look good temporarily.
+          </p>
+        </article>
+
+        <article class="bg-gray-950 rounded-lg p-8 border border-gray-800 text-center">
+          <div class="text-5xl mb-4">🤝</div>
+          <h3 class="text-xl font-bold text-white mb-3">Service</h3>
+          <p class="text-gray-400">
+            Clear communication, fair pricing, and honest timelines. We treat every customer like family and every project like it's our own.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Excellence -->
+  <section class="py-16 bg-gray-950">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-8 text-center">Why Choose Us</h2>
+        <div class="space-y-6">
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 rounded-full bg-cyan-500 flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white mb-2">Professional Equipment</h3>
+              <p class="text-gray-400">
+                State-of-the-art dipping tanks with precise temperature control, professional spray booths, and climate-controlled curing areas ensure consistent, high-quality results.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 rounded-full bg-cyan-500 flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white mb-2">Extensive Pattern Library</h3>
+              <p class="text-gray-400">
+                Access to hundreds of patterns from leading film manufacturers including carbon fiber, camo, wood grains, geometric designs, and specialty patterns. Can't find what you need? We'll source it.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 rounded-full bg-cyan-500 flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white mb-2">Expert Team</h3>
+              <p class="text-gray-400">
+                Our technicians are trained in the latest hydrographics techniques and stay current with industry developments. Every team member is passionate about delivering exceptional results.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 rounded-full bg-cyan-500 flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white mb-2">Quality Guarantee</h3>
+              <p class="text-gray-400">
+                We stand behind our work with a 1-year warranty against defects in workmanship. If there's an issue with our work, we'll make it right.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-br from-cyan-900 to-gray-900">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">Ready to Work With Us?</h2>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        Let's discuss your project and show you why customers choose HydroGraphix Pro for their custom finishes.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-900 font-semibold rounded-lg hover:bg-gray-100 transition-all shadow-lg"
+        >
+          Get Started
+        </a>
+        <a
+          href="/gallery"
+          class="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white font-semibold rounded-lg border-2 border-white hover:bg-white hover:text-cyan-900 transition-all"
+        >
+          View Our Work
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCards from '../components/ServiceCards.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import Testimonials from '../components/Testimonials.astro';
+import { siteConfig } from '../data/site';
+---
+
+<Layout
+  title={`${siteConfig.brandName} - ${siteConfig.tagline}`}
+  description={siteConfig.description}
+>
+  <Hero
+    title="Transform Your Vision Into Reality"
+    subtitle="Professional water transfer printing for automotive, firearms, sporting goods, and custom projects. Premium finishes that last."
+  />
+
+  <ServiceCards />
+
+  <ProcessSteps />
+
+  <Testimonials />
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-br from-cyan-900 to-gray-900">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+        Ready to Start Your Project?
+      </h2>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        Contact us today for a free consultation and quote. We'll help you choose the perfect pattern and finish for your project.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-900 font-semibold rounded-lg hover:bg-gray-100 transition-all shadow-lg text-lg"
+        >
+          Get Your Free Quote
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a
+          href={`tel:${siteConfig.phone}`}
+          class="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white font-semibold rounded-lg border-2 border-white hover:bg-white hover:text-cyan-900 transition-all text-lg"
+        >
+          {siteConfig.phone}
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
