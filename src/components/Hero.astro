@@ -18,21 +18,28 @@ const {
 } = Astro.props;
 ---
 
-<section class={`relative overflow-hidden ${compact ? 'py-12 md:py-20' : 'py-20 md:py-32'}`}>
+<section class={`relative overflow-hidden ${compact ? 'py-12 md:py-20' : 'py-20 md:py-32'}`} id="hero-section">
   <!-- Background with gradient overlay -->
-  <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-cyan-900 opacity-50"></div>
+  <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-cyan-900 opacity-50 hero-bg"></div>
   {backgroundImage && (
     <div
-      class="absolute inset-0 bg-cover bg-center opacity-20"
+      class="absolute inset-0 bg-cover bg-center opacity-20 hero-bg"
       style={`background-image: url('${backgroundImage}')`}
     ></div>
   )}
-  <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent hero-bg"></div>
+
+  <!-- Floating particles -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="particle particle-1"></div>
+    <div class="particle particle-2"></div>
+    <div class="particle particle-3"></div>
+  </div>
 
   <!-- Content -->
   <div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto text-center">
-      <h1 class={`font-bold text-white mb-6 ${compact ? 'text-3xl md:text-4xl' : 'text-4xl md:text-5xl lg:text-6xl'}`}>
+      <h1 class={`font-bold text-white mb-6 hero-title ${compact ? 'text-3xl md:text-4xl' : 'text-4xl md:text-5xl lg:text-6xl'}`}>
         {title}
       </h1>
       {subtitle && (
@@ -62,3 +69,100 @@ const {
     </div>
   </div>
 </section>
+
+<style>
+  /* Hero title animation */
+  .hero-title {
+    animation: fadeInDown 1s ease-out;
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Floating particles */
+  .particle {
+    position: absolute;
+    background: rgba(6, 182, 212, 0.3);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .particle-1 {
+    width: 100px;
+    height: 100px;
+    top: 20%;
+    left: 10%;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .particle-2 {
+    width: 150px;
+    height: 150px;
+    top: 60%;
+    right: 15%;
+    animation: float 10s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  .particle-3 {
+    width: 80px;
+    height: 80px;
+    bottom: 20%;
+    left: 50%;
+    animation: float 12s ease-in-out infinite;
+    animation-delay: 4s;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) translateX(0);
+    }
+    25% {
+      transform: translateY(-20px) translateX(10px);
+    }
+    50% {
+      transform: translateY(-40px) translateX(-10px);
+    }
+    75% {
+      transform: translateY(-20px) translateX(10px);
+    }
+  }
+
+  /* Parallax effect will be handled by JS */
+  .hero-bg {
+    transition: transform 0.1s ease-out;
+  }
+</style>
+
+<script>
+  // Parallax effect on scroll
+  document.addEventListener('astro:page-load', () => {
+    const heroSection = document.getElementById('hero-section');
+    if (!heroSection) return;
+
+    const handleScroll = () => {
+      const scrolled = window.scrollY;
+      const parallaxElements = heroSection.querySelectorAll('.hero-bg');
+
+      parallaxElements.forEach((el, index) => {
+        const speed = 0.5 + (index * 0.1);
+        (el as HTMLElement).style.transform = `translateY(${scrolled * speed}px)`;
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  });
+</script>

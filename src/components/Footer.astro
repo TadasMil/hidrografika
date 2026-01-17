@@ -4,21 +4,21 @@ import { siteConfig } from '../data/site';
 const currentYear = new Date().getFullYear();
 
 const quickLinks = [
-  { href: '/services', label: 'Services' },
-  { href: '/gallery', label: 'Gallery' },
-  { href: '/pricing', label: 'Pricing' },
-  { href: '/about', label: 'About Us' }
+  { href: '/services', label: 'Paslaugos' },
+  { href: '/gallery', label: 'Galerija' },
+  { href: '/pricing', label: 'Kainos' },
+  { href: '/about', label: 'Apie Mus' }
 ];
 
 const supportLinks = [
-  { href: '/faq', label: 'FAQ' },
-  { href: '/contact', label: 'Contact' },
-  { href: '/locations', label: 'Locations' }
+  { href: '/faq', label: 'DUK' },
+  { href: '/contact', label: 'Kontaktai' },
+  { href: '/locations', label: 'Vietos' }
 ];
 
 const legalLinks = [
-  { href: '/privacy', label: 'Privacy Policy' },
-  { href: '/terms', label: 'Terms of Service' }
+  { href: '/privacy', label: 'Privatumo Politika' },
+  { href: '/terms', label: 'Paslaugų Sąlygos' }
 ];
 ---
 
@@ -63,7 +63,7 @@ const legalLinks = [
 
       <!-- Quick Links -->
       <div>
-        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Quick Links</h4>
+        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Greitos Nuorodos</h4>
         <ul class="space-y-3">
           {quickLinks.map(link => (
             <li>
@@ -77,7 +77,7 @@ const legalLinks = [
 
       <!-- Support -->
       <div>
-        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Support</h4>
+        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Pagalba</h4>
         <ul class="space-y-3">
           {supportLinks.map(link => (
             <li>
@@ -91,7 +91,7 @@ const legalLinks = [
 
       <!-- Contact Info -->
       <div>
-        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Contact</h4>
+        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Kontaktai</h4>
         <address class="not-italic space-y-3 text-sm text-gray-400">
           <div>
             <p>{siteConfig.address}</p>
@@ -118,7 +118,7 @@ const legalLinks = [
     <div class="pt-8 mt-8 border-t border-gray-800">
       <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
         <p class="text-sm text-gray-500">
-          © {currentYear} {siteConfig.brandName}. All rights reserved.
+          © {currentYear} {siteConfig.brandName}. Visos teisės saugomos.
         </p>
         <div class="flex space-x-6">
           {legalLinks.map(link => (

@@ -27,20 +27,20 @@ export interface SocialLink {
 }
 
 export const siteConfig = {
-  brandName: "HydroGraphix Pro",
-  tagline: "Premium Water Transfer Printing & Custom Finishes",
-  description: "Professional hydrographics services for automotive, firearms, sporting goods, and custom projects. Expert water transfer printing with premium finishes.",
+  brandName: "Hidrografika",
+  tagline: "Profesionalus Vandens Pernešimo Spausdinimas",
+  description: "Profesionalios hidrografikos paslaugos automobiliams, ginklams, sportinėms prekėms ir individualūs projektai. Ekspertų vandens pernešimo spausdinimas su aukščiausios kokybės apdaila.",
 
-  phone: "(555) 123-4567",
-  email: "info@hydrographixpro.com",
-  address: "1234 Industrial Pkwy",
-  city: "Austin",
-  state: "TX",
-  zip: "78701",
+  phone: "+370 600 12345",
+  email: "info@hidrografika.lt",
+  address: "Pramonės g. 123",
+  city: "Vilnius",
+  state: "LT",
+  zip: "01234",
 
-  hours: "Mon-Fri: 8AM-6PM, Sat: 9AM-3PM",
+  hours: "Pr-Pn: 8:00-18:00, Št: 9:00-15:00",
 
-  siteUrl: "https://hydrographixpro.com",
+  siteUrl: "https://hidrografika.lt",
 
   socials: [
     {
@@ -63,178 +63,178 @@ export const siteConfig = {
   services: [
     {
       id: "automotive",
-      name: "Automotive Parts",
-      description: "Custom hydrographic finishes for interior and exterior automotive components including dashboards, trim pieces, wheels, and engine covers.",
+      name: "Automobilių Dalys",
+      description: "Individuali hidrografinė apdaila vidaus ir išorės automobilio komponentams, įskaitant prietaisų skydelius, apdailos dalis, ratlankius ir variklio dangčius.",
       icon: "🚗",
       features: [
-        "Interior trim pieces",
-        "Dashboard components",
-        "Wheel refurbishment",
-        "Engine bay components",
-        "Custom patterns available"
+        "Vidaus apdailos dalys",
+        "Prietaisų skydelio komponentai",
+        "Ratlankių atnaujinimas",
+        "Variklio skyriaus komponentai",
+        "Individualūs raštai prieinami"
       ],
-      price: "Starting at $150"
+      price: "Nuo 150 €"
     },
     {
       id: "firearms",
-      name: "Firearms & Tactical",
-      description: "Durable, professional water transfer printing for firearms, magazines, and tactical equipment with camo and custom patterns.",
+      name: "Ginklai ir Taktinė Įranga",
+      description: "Patvarūs, profesionalūs vandens pernešimo spaudiniai ginklams, dėtuvėms ir taktinei įrangai su kamufliažo ir individualiais raštais.",
       icon: "🎯",
       features: [
-        "Rifle and shotgun stocks",
-        "Handgun frames",
-        "Magazines and accessories",
-        "Tactical gear",
-        "Cerakote prep available"
+        "Šautuvų ir medžioklės šautuvų buožės",
+        "Pistoletų rėmai",
+        "Dėtuvės ir aksesuarai",
+        "Taktinė įranga",
+        "Cerakote paruošimas prieinamas"
       ],
-      price: "Starting at $200"
+      price: "Nuo 200 €"
     },
     {
       id: "sporting",
-      name: "Sporting Goods",
-      description: "Premium finishes for hunting equipment, fishing gear, ATVs, motorcycles, and outdoor recreational products.",
+      name: "Sportinės Prekės",
+      description: "Aukščiausios kokybės apdaila medžioklės įrangai, žvejybos reikmenims, keturračiams, motociklams ir lauko rekreacijai skirtiems produktams.",
       icon: "🏹",
       features: [
-        "ATV and UTV parts",
-        "Motorcycle components",
-        "Hunting equipment",
-        "Fishing rods and reels",
-        "Outdoor accessories"
+        "Keturračių ir bagių dalys",
+        "Motociklų komponentai",
+        "Medžioklės įranga",
+        "Žvejybos meškerės ir ritės",
+        "Lauko aksesuarai"
       ],
-      price: "Starting at $100"
+      price: "Nuo 100 €"
     },
     {
       id: "industrial",
-      name: "Industrial & Custom",
-      description: "Professional hydrographics for commercial projects, prototypes, signage, and unique custom applications.",
+      name: "Pramoninė ir Individuali",
+      description: "Profesionali hidrografika komerciniams projektams, prototipams, iškaboms ir unikaliems individualūs taikymams.",
       icon: "⚙️",
       features: [
-        "Commercial equipment",
-        "Prototypes and samples",
-        "Signage and displays",
-        "Home décor items",
-        "One-off custom projects"
+        "Komercinė įranga",
+        "Prototipai ir pavyzdžiai",
+        "Iškabos ir ekspozicijos",
+        "Namų dekoro daiktai",
+        "Vienarūšiai individualūs projektai"
       ],
-      price: "Custom quote"
+      price: "Individuali kaina"
     }
   ] as Service[],
 
   locations: [
     {
-      id: "austin",
-      name: "Austin - Main Shop",
-      address: "1234 Industrial Pkwy",
-      city: "Austin",
-      state: "TX",
-      zip: "78701",
-      phone: "(555) 123-4567",
-      email: "austin@hydrographixpro.com",
-      hours: "Mon-Fri: 8AM-6PM, Sat: 9AM-3PM",
-      mapUrl: "https://maps.google.com/?q=Austin+TX+78701"
+      id: "vilnius",
+      name: "Vilnius - Pagrindinė Dirbtuvė",
+      address: "Pramonės g. 123",
+      city: "Vilnius",
+      state: "LT",
+      zip: "01234",
+      phone: "+370 600 12345",
+      email: "vilnius@hidrografika.lt",
+      hours: "Pr-Pn: 8:00-18:00, Št: 9:00-15:00",
+      mapUrl: "https://maps.google.com/?q=Vilnius+Lithuania"
     },
     {
-      id: "dallas",
-      name: "Dallas Location",
-      address: "5678 Commerce St",
-      city: "Dallas",
-      state: "TX",
-      zip: "75201",
-      phone: "(555) 234-5678",
-      email: "dallas@hydrographixpro.com",
-      hours: "Mon-Fri: 9AM-5PM, Sat: 10AM-2PM",
-      mapUrl: "https://maps.google.com/?q=Dallas+TX+75201"
+      id: "kaunas",
+      name: "Kauno Filialas",
+      address: "Pramonės pr. 456",
+      city: "Kaunas",
+      state: "LT",
+      zip: "45678",
+      phone: "+370 600 54321",
+      email: "kaunas@hidrografika.lt",
+      hours: "Pr-Pn: 9:00-17:00, Št: 10:00-14:00",
+      mapUrl: "https://maps.google.com/?q=Kaunas+Lithuania"
     }
   ] as Location[],
 
   process: [
     {
       step: 1,
-      title: "Surface Preparation",
-      description: "Thorough cleaning and sanding to ensure optimal adhesion. We strip old coatings and prep the surface to perfection."
+      title: "Paviršiaus Paruošimas",
+      description: "Kruopštus valymas ir šlifavimas, kad būtų užtikrintas optimalus sukibimas. Nuvalome senus dangus ir paruošiame paviršių iki tobulumo."
     },
     {
       step: 2,
-      title: "Base Coat Application",
-      description: "Premium base coat applied for optimal pattern adhesion and color depth. Multiple coats ensure even coverage."
+      title: "Gruntuojamojo Sluoksnio Uždėjimas",
+      description: "Aukščiausios kokybės gruntas užtikrina optimalų rašto sukibimą ir spalvos gylį. Keli sluoksniai užtikrina tolygų padengimą."
     },
     {
       step: 3,
-      title: "Water Transfer Dipping",
-      description: "Precision dipping process where the hydrographic film is activated and applied to your item in our temperature-controlled tank."
+      title: "Vandens Pernešimo Panardinis",
+      description: "Tikslus panardinis, kurio metu hidrografinė plėvelė aktyvuojama ir uždedama ant daikto mūsų temperatūros kontroliuojamame rezervuare."
     },
     {
       step: 4,
-      title: "Rinse & Inspection",
-      description: "Gentle rinse to remove residue followed by detailed quality inspection to ensure flawless pattern application."
+      title: "Skalavimas ir Patikra",
+      description: "Švelnūs skalavimas, kad pašalin turtumas liekanų, po kurio atliekama išsami kokybės patikra, kad užtikrintume nesklaidų rašto uždėjimą."
     },
     {
       step: 5,
-      title: "Drying Period",
-      description: "Controlled drying environment ensures proper curing. We never rush this critical step."
+      title: "Džiovinimo Periodas",
+      description: "Kontroliuojama džiovinimo aplinka užtikrina tinkamą kietėjimą. Mes niekada neskubame šio kritin io žingsnio."
     },
     {
       step: 6,
-      title: "Clear Coat Finish",
-      description: "Multiple layers of professional-grade clear coat for UV protection, durability, and a stunning glossy or matte finish."
+      title: "Skaidrus Dangos Padengimas",
+      description: "Keli profesionalaus lygio skaidraus dango sluoksniai UV apsaugai, ilgaamžiškumui ir nuostabiai blizgiai arba matinei apdailai."
     }
   ],
 
   faqs: [
     {
-      question: "What is hydrographics?",
-      answer: "Hydrographics, also known as water transfer printing, is a process that applies decorative patterns to three-dimensional objects. A specialized film is floated on water, activated with a chemical solution, and then the object is dipped through the film, transferring the pattern onto the surface."
+      question: "Kas yra hidrografika?",
+      answer: "Hidrografika, taip pat žinoma kaip vandens pernešimo spausdinimas, yra procesas, kuris uždeda dekoratyvinius raštus ant trimatių objektų. Specializuota plėvelė plūduriuojama vandenyje, aktyvinama cheminio tirpalo ir tada objektas pamerkiamas pro plėvelę, perkeliant raštą ant paviršiaus."
     },
     {
-      question: "How long does the process take?",
-      answer: "Most projects take 3-5 business days from drop-off to completion. This includes surface prep, base coating, the dipping process, drying time, and clear coat application. Rush services may be available for an additional fee."
+      question: "Kiek laiko užtrunka procesas?",
+      answer: "Dauguma projektų užtrunka 3-5 darbo dienas nuo pristatymo iki užbaigimo. Tai apima paviršiaus paruošimą, gruntuojamąjį sluoksnį, panardininį procesą, džiovinimo laiką ir skaidraus dango padengimą. Skubios paslaugos gali būti prieinamos už papildomą mokestį."
     },
     {
-      question: "What materials can be dipped?",
-      answer: "We can dip almost any solid material including plastics, metal, wood, glass, and ceramics. Common items include automotive parts, firearms, sporting goods, helmets, and home décor. If you're unsure about your item, contact us for a consultation."
+      question: "Kokias medžiagas galima panardinti?",
+      answer: "Galime panardinti beveik bet kokią kieto medžiagą, įskaitant plastikus, metalą, medieną, stiklą ir keraminius dirbimus. Dažniausiai tai automobilių dalys, ginklai, sportinės prekės, šalmai ir namų dekoras. Jei abejojate dėl savo daikto, susisiekite su mumis konsultacijai."
     },
     {
-      question: "How durable is the finish?",
-      answer: "When properly applied with our professional-grade clear coats, hydrographic finishes are extremely durable and can last for years. The finish is UV-resistant, scratch-resistant, and can withstand normal wear and tear. We recommend proper care and maintenance for optimal longevity."
+      question: "Kiek patvarūs yra apdailos?",
+      answer: "Kai tinkamai uždedama su mūsų profesionalaus lygio skaidriais dangais, hidrografinės apdailos yra nepaprastai patvarūs ir gali išlikti daugelį metų. Apdaila atspari UV spinduliams, įbrėžimams ir gali atlaikyti įprastą nusidėvėjimą. Rekomenduojame tinkamą priežiūrą optimaliam ilgaamžiškumui."
     },
     {
-      question: "Can I choose any pattern?",
-      answer: "We offer hundreds of patterns including carbon fiber, camo, wood grains, geometric designs, and more. If you have a custom pattern in mind, contact us to discuss feasibility. We can source most commercially available hydrographic films."
+      question: "Ar galiu pasirinkti bet kokį raštą?",
+      answer: "Siūlome šimtus raštų, įskaitant anglies pluoštą, kamufliažą, medienos tekstūras, geometrinius dizainus ir daugiau. Jei turite individualų raštą omenyje, susisiekite su mumis aptarti galimybes. Galime įsigyti daugumą komerciš kai prieinamų hidrografinių plėvelių."
     },
     {
-      question: "Do you offer warranty?",
-      answer: "Yes, we stand behind our work with a 1-year warranty against defects in workmanship. This covers peeling, flaking, or adhesion issues when the item is used under normal conditions. Warranty does not cover damage from accidents, abuse, or improper maintenance."
+      question: "Ar teikiate garantiją?",
+      answer: "Taip, už savo darbą atsakome su 1 metų garantija prieš defektus darbo kokybėje. Tai apima lupimąsi, atšokimą arba sukibimo problemas, kai daiktas naudojamas įprastomis sąlygomis. Garantija neapima žalos dėl avarijų, piktnaudžiavimo arba netinkamos priežiūros."
     },
     {
-      question: "What's the cost for a typical project?",
-      answer: "Pricing varies based on item size, complexity, and pattern choice. Small items start at $100, automotive parts typically range from $150-$400, and firearms start at $200. Contact us with photos and details for an accurate quote."
+      question: "Kiek kainuoja tipinis projektas?",
+      answer: "Kaina priklauso nuo daikto dydžio, sudėtingumo ir rašto pasirinkimo. Maži daiktai prasideda nuo 100 €, automobilių dalys paprastai svyruoja nuo 150-400 €, o ginklai prasideda nuo 200 €. Susisiekite su mumis su nuotraukomis ir detalėmis tiksliai kainai gauti."
     },
     {
-      question: "Do I need to disassemble my item?",
-      answer: "In most cases, yes. Items should be disassembled and any parts you don't want dipped should be removed. We can provide disassembly services for an additional fee. Bring your item in for a consultation and we'll advise on the best approach."
+      question: "Ar turiu išardyti savo daiktą?",
+      answer: "Daugeliu atvejų, taip. Daiktai turėtų būti išardyti ir bet kokios dalys, kurių nenorite panardinti, turėtų būti pašalintos. Galime teikti išardymo paslaugas už papildomą mokestį. Atveskite savo daiktą konsultacijai ir patarsime geriausią būdą."
     }
   ],
 
   testimonials: [
     {
-      name: "Mike Richardson",
-      location: "Austin, TX",
+      name: "Tomas Petrauskas",
+      location: "Vilnius, Lietuva",
       rating: 5,
-      text: "Absolutely blown away by the quality! Had my truck interior pieces done in carbon fiber and they look factory. The attention to detail is incredible.",
-      project: "Automotive Interior"
+      text: "Visiškai priblokštas kokybės! Mano automobilio vidaus dalys atliktos anglies pluošto raštu ir atrodo kaip gamyklinės. Dėmesys detalėms nepaprastas.",
+      project: "Automobilio Vidus"
     },
     {
-      name: "Sarah Martinez",
-      location: "Dallas, TX",
+      name: "Rūta Kazlauskaitė",
+      location: "Kaunas, Lietuva",
       rating: 5,
-      text: "Professional service from start to finish. They walked me through the entire process and the final result on my AR-15 exceeded expectations. Highly recommend!",
-      project: "Firearm Finish"
+      text: "Profesionali paslauga nuo pradžios iki pabaigos. Jie man išaiškino visą procesą ir galutinis rezultatas viršijo lūkesčius. Labai rekomenduoju!",
+      project: "Medžioklės Įranga"
     },
     {
-      name: "Jason Weber",
-      location: "Round Rock, TX",
+      name: "Darius Jonaitis",
+      location: "Klaipėda, Lietuva",
       rating: 5,
-      text: "These guys are true craftsmen. Had my motorcycle parts and ATV panels done. The finish is flawless and has held up perfectly over the past year.",
-      project: "Powersports"
+      text: "Šie žmonės yra tikri meistrai. Padariau motociklo dalis ir keturračio skydelius. Apdaila nepriekaistinga ir išliko puikiai per pastaruosius metus.",
+      project: "Motorsportas"
     }
   ]
 } as const;

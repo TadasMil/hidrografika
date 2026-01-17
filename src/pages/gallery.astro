@@ -2,29 +2,29 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 
-// Gallery images - in production, these would be actual image files
+// Gallery images
 const galleryItems = [
-  { id: 1, category: 'Automotive', title: 'Carbon Fiber Dashboard', image: 'https://placehold.co/600x400/1a1a1a/cyan?text=Carbon+Fiber+Dashboard' },
-  { id: 2, category: 'Firearms', title: 'Digital Camo AR-15', image: 'https://placehold.co/600x400/1a1a1a/cyan?text=Digital+Camo+AR-15' },
-  { id: 3, category: 'Sporting', title: 'Woodgrain ATV Panel', image: 'https://placehold.co/600x400/1a1a1a/cyan?text=Woodgrain+ATV' },
-  { id: 4, category: 'Automotive', title: 'Skull Pattern Wheels', image: 'https://placehold.co/600x400/1a1a1a/cyan?text=Skull+Wheels' },
-  { id: 5, category: 'Firearms', title: 'Kryptek Camo Rifle', image: 'https://placehold.co/600x400/1a1a1a/cyan?text=Kryptek+Rifle' },
-  { id: 6, category: 'Industrial', title: 'Custom Logo Panel', image: 'https://placehold.co/600x400/1a1a1a/cyan?text=Custom+Logo' },
-  { id: 7, category: 'Automotive', title: 'Engine Bay Components', image: 'https://placehold.co/600x400/1a1a1a/cyan?text=Engine+Bay' },
-  { id: 8, category: 'Sporting', title: 'Realtree Camo Bow', image: 'https://placehold.co/600x400/1a1a1a/cyan?text=Realtree+Bow' },
-  { id: 9, category: 'Automotive', title: 'Interior Trim Pieces', image: 'https://placehold.co/600x400/1a1a1a/cyan?text=Interior+Trim' }
+  { id: 1, category: 'Automobiliai', title: 'Automobilio Vidaus Apdaila (Prieš/Po)', image: 'https://placehold.co/600x400/1a1a1a/06b6d4?text=Auto+Vidus' },
+  { id: 2, category: 'Automobiliai', title: 'Individualios Durų Apdailos', image: 'https://placehold.co/600x400/1a1a1a/06b6d4?text=Duru+Apdaila' },
+  { id: 3, category: 'Automobiliai', title: 'Hidrografikos Pavyzdžiai Vidaus Dalims', image: 'https://placehold.co/600x400/1a1a1a/06b6d4?text=Vidaus+Dalys' },
+  { id: 4, category: 'Automobiliai', title: 'Dodge Viper Individualus Vidus', image: 'https://placehold.co/600x400/1a1a1a/06b6d4?text=Viper+Vidus' },
+  { id: 5, category: 'Automobiliai', title: 'Anglies Pluošto Vidaus Detalė', image: 'https://placehold.co/600x400/1a1a1a/06b6d4?text=Anglies+Pluostas' },
+  { id: 6, category: 'Automobiliai', title: 'Medienos Tekstūra Honda Accord', image: 'https://placehold.co/600x400/1a1a1a/06b6d4?text=Mediena+Honda' },
+  { id: 7, category: 'Sportas', title: 'Šalmo Hidrografika (Kamufliažas)', image: 'https://placehold.co/600x400/1a1a1a/06b6d4?text=Salmas+Kamufliazas' },
+  { id: 8, category: 'Automobiliai', title: 'Variklio Skyriaus Komponentai', image: 'https://placehold.co/600x400/1a1a1a/06b6d4?text=Variklio+Dalis' },
+  { id: 9, category: 'Sportas', title: 'Keturračių Dalys', image: 'https://placehold.co/600x400/1a1a1a/06b6d4?text=Keturatis' }
 ];
 
-const categories = ['All', 'Automotive', 'Firearms', 'Sporting', 'Industrial'];
+const categories = ['Visi', 'Automobiliai', 'Sportas', 'Pramonė'];
 ---
 
 <Layout
-  title="Gallery"
-  description="Browse our portfolio of hydrographics projects including automotive parts, firearms, sporting goods, and custom applications."
+  title="Galerija - Hidrografika"
+  description="Naršykite mūsų hidrografikos projektų portfelį, įskaitant automobilio dalis, sportines prekes ir individualius pritaikymus."
 >
   <Hero
-    title="Our Work"
-    subtitle="Browse our portfolio of completed projects"
+    title="Mūsų Darbai"
+    subtitle="Naršykite mūsų užbaigtų projektų portfelį"
     ctaText={null}
     compact
   />
@@ -71,7 +71,7 @@ const categories = ['All', 'Automotive', 'Firearms', 'Sporting', 'Industrial'];
 
       <!-- Empty State (hidden by default) -->
       <div id="empty-state" class="hidden text-center py-12">
-        <p class="text-gray-500 text-lg">No projects found in this category.</p>
+        <p class="text-gray-500 text-lg">Šioje kategorijoje projektų nerasta.</p>
       </div>
     </div>
   </section>
@@ -79,15 +79,15 @@ const categories = ['All', 'Automotive', 'Firearms', 'Sporting', 'Industrial'];
   <!-- CTA Section -->
   <section class="py-16 bg-gray-900">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold text-white mb-4">Ready to Create Your Custom Finish?</h2>
+      <h2 class="text-3xl font-bold text-white mb-4">Pasiruošę Sukurti Savo Individualią Apdailą?</h2>
       <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-        Let's discuss your project and bring your vision to life.
+        Aptarkime jūsų projektą ir paverškime viziją realybe.
       </p>
       <a
         href="/contact"
         class="inline-flex items-center px-8 py-4 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition-all shadow-lg shadow-cyan-500/30"
       >
-        Start Your Project
+        Pradėkite Savo Projektą
       </a>
     </div>
   </section>
@@ -115,7 +115,7 @@ const categories = ['All', 'Automotive', 'Firearms', 'Sporting', 'Industrial'];
         let visibleCount = 0;
         items.forEach(item => {
           const itemCategory = item.getAttribute('data-category');
-          if (category === 'All' || itemCategory === category) {
+          if (category === 'Visi' || itemCategory === category) {
             item.classList.remove('hidden');
             visibleCount++;
           } else {
