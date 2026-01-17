@@ -29,13 +29,13 @@ const getStructuredData = () => {
       openingHoursSpecification: [
         {
           '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+          dayOfWeek: ['Pirmadienis', 'Antradienis', 'Trečiadienis', 'Ketvirtadienis', 'Penktadienis'],
           opens: '08:00',
           closes: '18:00'
         },
         {
           '@type': 'OpeningHoursSpecification',
-          dayOfWeek: 'Saturday',
+          dayOfWeek: 'Šeštadienis',
           opens: '09:00',
           closes: '15:00'
         }
@@ -49,7 +49,7 @@ const getStructuredData = () => {
     return {
       '@context': 'https://schema.org',
       '@type': 'Service',
-      serviceType: 'Hydrographics Water Transfer Printing',
+      serviceType: 'Hidrografikos Vandens Pernešimo Spausdinimas',
       provider: {
         '@type': 'LocalBusiness',
         name: siteConfig.brandName,
@@ -59,12 +59,12 @@ const getStructuredData = () => {
           '@type': 'PostalAddress',
           addressLocality: siteConfig.city,
           addressRegion: siteConfig.state,
-          addressCountry: 'US'
+          addressCountry: 'LT'
         }
       },
       areaServed: {
-        '@type': 'State',
-        name: 'Texas'
+        '@type': 'Country',
+        name: 'Lietuva'
       },
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
