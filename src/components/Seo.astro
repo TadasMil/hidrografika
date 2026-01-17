@@ -25,9 +25,9 @@ const fullTitle = title.includes(siteConfig.brandName)
 
 const canonicalURL = canonical
   ? new URL(canonical, siteConfig.siteUrl).href
-  : new URL(Astro.url.pathname, siteConfig.siteUrl).href;
+  : siteConfig.siteUrl + (Astro.url.pathname === "/" ? "" : Astro.url.pathname);
 
-const ogImageUrl = new URL(ogImage, siteConfig.siteUrl).href;
+const ogImageUrl = siteConfig.siteUrl + "/" + ogImage;
 ---
 
 <!-- Primary Meta Tags -->
