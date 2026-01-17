@@ -6,7 +6,9 @@
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-2xl mx-auto">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Gauti Pasiūlymą</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Gauti Pasiūlymą
+        </h2>
         <p class="text-xl text-gray-400">
           Užpildykite žemiau esantį formą ir atsiliepsime per 24 valandas
         </p>
@@ -18,7 +20,10 @@
       >
         <!-- Name -->
         <div>
-          <label for="name" class="block text-sm font-medium text-gray-300 mb-2">
+          <label
+            for="name"
+            class="block text-sm font-medium text-gray-300 mb-2"
+          >
             Pilnas Vardas <span class="text-red-500">*</span>
           </label>
           <input
@@ -33,7 +38,10 @@
 
         <!-- Email -->
         <div>
-          <label for="email" class="block text-sm font-medium text-gray-300 mb-2">
+          <label
+            for="email"
+            class="block text-sm font-medium text-gray-300 mb-2"
+          >
             El. Pašto Adresas <span class="text-red-500">*</span>
           </label>
           <input
@@ -48,7 +56,10 @@
 
         <!-- Phone -->
         <div>
-          <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">
+          <label
+            for="phone"
+            class="block text-sm font-medium text-gray-300 mb-2"
+          >
             Telefono Numeris <span class="text-red-500">*</span>
           </label>
           <input
@@ -63,7 +74,10 @@
 
         <!-- Item Type -->
         <div>
-          <label for="item-type" class="block text-sm font-medium text-gray-300 mb-2">
+          <label
+            for="item-type"
+            class="block text-sm font-medium text-gray-300 mb-2"
+          >
             Daikto Tipas <span class="text-red-500">*</span>
           </label>
           <select
@@ -83,7 +97,10 @@
 
         <!-- Message -->
         <div>
-          <label for="message" class="block text-sm font-medium text-gray-300 mb-2">
+          <label
+            for="message"
+            class="block text-sm font-medium text-gray-300 mb-2"
+          >
             Projekto Detalės <span class="text-red-500">*</span>
           </label>
           <textarea
@@ -145,7 +162,15 @@
 
         <!-- Privacy Note -->
         <p class="text-xs text-gray-500 text-center">
-          Pateikdami šį formą, sutinkate su mūsų <a href="/privacy" class="text-cyan-400 hover:text-cyan-300 underline">Privatumo Politika</a> ir <a href="/terms" class="text-cyan-400 hover:text-cyan-300 underline">Paslaugos Sąlygomis</a>.
+          Pateikdami šį formą, sutinkate su mūsų <a
+            href="/privacy"
+            class="text-cyan-400 hover:text-cyan-300 underline"
+            >Privatumo Politika</a
+          > ir <a
+            href="/terms"
+            class="text-cyan-400 hover:text-cyan-300 underline"
+            >Paslaugos Sąlygomis</a
+          >.
         </p>
       </form>
     </div>
@@ -153,11 +178,11 @@
 </section>
 
 <script>
-  document.addEventListener('astro:page-load', () => {
-    const form = document.getElementById('contact-form') as HTMLFormElement;
+  document.addEventListener("astro:page-load", () => {
+    const form = document.getElementById("contact-form") as HTMLFormElement;
 
     if (form) {
-      form.addEventListener('submit', (e) => {
+      form.addEventListener("submit", (e) => {
         e.preventDefault();
 
         // In a real application, you would send the form data to a server here
@@ -165,10 +190,10 @@
 
         // Simulate form submission
         const formData = new FormData(form);
-        console.log('Form data:', Object.fromEntries(formData));
+        console.log("Form data:", Object.fromEntries(formData));
 
         // Redirect to thanks page
-        window.location.href = '/thanks';
+        window.location.href = "/thanks";
       });
     }
   });

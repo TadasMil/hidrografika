@@ -1,9 +1,9 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Seo from '../components/Seo.astro';
-import JsonLd from '../components/JsonLd.astro';
-import '../styles/global.css';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Seo from "../components/Seo.astro";
+import JsonLd from "../components/JsonLd.astro";
+import "../styles/global.css";
 
 interface Props {
   title: string;
@@ -11,7 +11,7 @@ interface Props {
   canonical?: string;
   ogImage?: string;
   noindex?: boolean;
-  structuredDataType?: 'local-business' | 'service' | 'faq';
+  structuredDataType?: "local-business" | "service" | "faq";
 }
 
 const {
@@ -20,7 +20,7 @@ const {
   canonical,
   ogImage,
   noindex = false,
-  structuredDataType = 'local-business'
+  structuredDataType = "local-business",
 } = Astro.props;
 ---
 

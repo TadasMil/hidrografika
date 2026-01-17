@@ -1,7 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import { siteConfig } from '../data/site';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import { siteConfig } from "../data/site";
 ---
 
 <Layout
@@ -19,22 +19,34 @@ import { siteConfig } from '../data/site';
       <!-- Pricing Info -->
       <div class="max-w-4xl mx-auto mb-16">
         <div class="bg-gray-900 rounded-lg p-8 border border-gray-800">
-          <h2 class="text-2xl font-bold text-white mb-4">Kaip Vertinama Mūsų Paslaugos</h2>
+          <h2 class="text-2xl font-bold text-white mb-4">
+            Kaip Vertinama Mūsų Paslaugos
+          </h2>
           <p class="text-gray-400 leading-relaxed mb-6">
-            Kiekvienas projektas yra unikalus, o kainodara priklauso nuo kelių veiksnių, įskaitant daikto dydį, sudėtingumą, rašto pasirinkimo ir apdailos reikalavimų. Žemiau yra mūsų pradinės kainos bendros paslaugoms. Susisiekite su mumis su nuotraukomis ir detalėmis tiksliai kainai gauti.
+            Kiekvienas projektas yra unikalus, o kainodara priklauso nuo kelių
+            veiksnių, įskaitant daikto dydį, sudėtingumą, rašto pasirinkimo ir
+            apdailos reikalavimų. Žemiau yra mūsų pradinės kainos bendros
+            paslaugoms. Susisiekite su mumis su nuotraukomis ir detalėmis
+            tiksliai kainai gauti.
           </p>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
             <div class="bg-gray-800 rounded p-4 border border-gray-700">
               <p class="text-cyan-400 font-semibold mb-2">Dydis</p>
-              <p class="text-gray-400">Didesni daiktai reikalauja daugiau plėvelės ir paruogo laiko</p>
+              <p class="text-gray-400">
+                Didesni daiktai reikalauja daugiau plėvelės ir paruogo laiko
+              </p>
             </div>
             <div class="bg-gray-800 rounded p-4 border border-gray-700">
               <p class="text-cyan-400 font-semibold mb-2">Sudėtingumas</p>
-              <p class="text-gray-400">Sudaryti formos ir kelios dalys paveiks kainodaroj</p>
+              <p class="text-gray-400">
+                Sudaryti formos ir kelios dalys paveiks kainodaroj
+              </p>
             </div>
             <div class="bg-gray-800 rounded p-4 border border-gray-700">
               <p class="text-cyan-400 font-semibold mb-2">Raštas</p>
-              <p class="text-gray-400">Kai kurie aukščiausios kokybės raštai kainuoja daugiau</p>
+              <p class="text-gray-400">
+                Kai kurie aukščiausios kokybės raštai kainuoja daugiau
+              </p>
             </div>
           </div>
         </div>
@@ -43,57 +55,92 @@ import { siteConfig } from '../data/site';
       <!-- Service Pricing -->
       <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {siteConfig.services.map(service => (
-            <article class="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-cyan-500 transition-all">
-              <div class="text-4xl mb-4">{service.icon}</div>
-              <h3 class="text-xl font-bold text-white mb-2">{service.name}</h3>
-              <p class="text-3xl font-bold text-cyan-400 mb-4">{service.price}</p>
-              <ul class="space-y-2 mb-6">
-                {service.features.slice(0, 3).map(feature => (
-                  <li class="text-sm text-gray-400 flex items-start">
-                    <svg class="w-4 h-4 text-cyan-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                    </svg>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="/contact"
-                class="block text-center px-4 py-2 bg-gray-800 text-white font-semibold rounded hover:bg-cyan-500 transition-colors border border-gray-700"
-              >
-                Gauti Pasiūlymą
-              </a>
-            </article>
-          ))}
+          {
+            siteConfig.services.map((service) => (
+              <article class="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-cyan-500 transition-all">
+                <div class="text-4xl mb-4">{service.icon}</div>
+                <h3 class="text-xl font-bold text-white mb-2">
+                  {service.name}
+                </h3>
+                <p class="text-3xl font-bold text-cyan-400 mb-4">
+                  {service.price}
+                </p>
+                <ul class="space-y-2 mb-6">
+                  {service.features.slice(0, 3).map((feature) => (
+                    <li class="text-sm text-gray-400 flex items-start">
+                      <svg
+                        class="w-4 h-4 text-cyan-500 mr-2 flex-shrink-0 mt-0.5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="/contact"
+                  class="block text-center px-4 py-2 bg-gray-800 text-white font-semibold rounded hover:bg-cyan-500 transition-colors border border-gray-700"
+                >
+                  Gauti Pasiūlymą
+                </a>
+              </article>
+            ))
+          }
         </div>
       </div>
 
       <!-- Additional Services -->
       <div class="max-w-4xl mx-auto mt-16">
-        <h2 class="text-3xl font-bold text-white mb-8 text-center">Papildomos Paslaugos</h2>
+        <h2 class="text-3xl font-bold text-white mb-8 text-center">
+          Papildomos Paslaugos
+        </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <article class="bg-gray-900 rounded-lg p-6 border border-gray-800">
             <h3 class="text-xl font-bold text-white mb-3">Skubi Paslauga</h3>
-            <p class="text-gray-400 mb-4">Reikia greičiau? Siūlome paskubėtą apdorojimą už papildomą 50% mokestį. Dauguma projektų gali būti užbaigti per 1-2 darbo dienas.</p>
+            <p class="text-gray-400 mb-4">
+              Reikia greičiau? Siūlome paskubėtą apdorojimą už papildomą 50%
+              mokestį. Dauguma projektų gali būti užbaigti per 1-2 darbo dienas.
+            </p>
             <p class="text-cyan-400 font-semibold">+50% nuo pagrindo kainos</p>
           </article>
 
           <article class="bg-gray-900 rounded-lg p-6 border border-gray-800">
-            <h3 class="text-xl font-bold text-white mb-3">Išardymas/Surinkimas</h3>
-            <p class="text-gray-400 mb-4">Galime patvarkīti jūsų daiktų išardymą ir surinkimo. Kaina skiriasi pagal sudėtingumą.</p>
+            <h3 class="text-xl font-bold text-white mb-3">
+              Išardymas/Surinkimas
+            </h3>
+            <p class="text-gray-400 mb-4">
+              Galime patvarkīti jūsų daiktų išardymą ir surinkimo. Kaina
+              skiriasi pagal sudėtingumą.
+            </p>
             <p class="text-cyan-400 font-semibold">Nuo 50 €</p>
           </article>
 
           <article class="bg-gray-900 rounded-lg p-6 border border-gray-800">
-            <h3 class="text-xl font-bold text-white mb-3">Individualus Rašto Dizainas</h3>
-            <p class="text-gray-400 mb-4">Turite unikalų vizų?įpročiau mesime arba sukūsimes individualįua raštus jūsų projektui.</p>
+            <h3 class="text-xl font-bold text-white mb-3">
+              Individualus Rašto Dizainas
+            </h3>
+            <p class="text-gray-400 mb-4">
+              Turite unikalų vizų?įpročiau mesime arba sukūsimes individualįua
+              raštus jūsų projektui.
+            </p>
             <p class="text-cyan-400 font-semibold">Pasiūlymas pagal užklausą</p>
           </article>
 
           <article class="bg-gray-900 rounded-lg p-6 border border-gray-800">
-            <h3 class="text-xl font-bold text-white mb-3">Cerakote Paruošimas</h3>
-            <p class="text-gray-400 mb-4">Profesionalus paviršiaus paruošimas Cerakote taikymui ginklams ir taktinei įrangai.</p>
+            <h3 class="text-xl font-bold text-white mb-3">
+              Cerakote Paruošimas
+            </h3>
+            <p class="text-gray-400 mb-4">
+              Profesionalus paviršiaus paruošimas Cerakote taikymui ginklams ir
+              taktinei įrangai.
+            </p>
             <p class="text-cyan-400 font-semibold">Nuo 100 €</p>
           </article>
         </div>
@@ -105,41 +152,88 @@ import { siteConfig } from '../data/site';
   <section class="py-16 bg-gray-900">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto">
-        <h2 class="text-3xl font-bold text-white mb-8 text-center">Kainų Klausimai</h2>
+        <h2 class="text-3xl font-bold text-white mb-8 text-center">
+          Kainų Klausimai
+        </h2>
         <div class="space-y-4">
-          <details class="group bg-gray-950 rounded-lg border border-gray-800 overflow-hidden">
-            <summary class="flex justify-between items-center cursor-pointer p-6 font-semibold text-white list-none">
+          <details
+            class="group bg-gray-950 rounded-lg border border-gray-800 overflow-hidden"
+          >
+            <summary
+              class="flex justify-between items-center cursor-pointer p-6 font-semibold text-white list-none"
+            >
               <span>Ar siūlote didelinių užsakymų nuolaidas?</span>
-              <svg class="w-6 h-6 text-cyan-500 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              <svg
+                class="w-6 h-6 text-cyan-500 transition-transform group-open:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
               </svg>
             </summary>
             <div class="px-6 pb-6 pt-2 text-gray-400">
-              Taip, siūlome nuolaidas kelių daiktų ar dideliems užsakymams. Susisiekite su mumis su jūsų projekto detalėmis dėl individualaus pasiūlymo.
+              Taip, siūlome nuolaidas kelių daiktų ar dideliems užsakymams.
+              Susisiekite su mumis su jūsų projekto detalėmis dėl individualaus
+              pasiūlymo.
             </div>
           </details>
 
-          <details class="group bg-gray-950 rounded-lg border border-gray-800 overflow-hidden">
-            <summary class="flex justify-between items-center cursor-pointer p-6 font-semibold text-white list-none">
+          <details
+            class="group bg-gray-950 rounded-lg border border-gray-800 overflow-hidden"
+          >
+            <summary
+              class="flex justify-between items-center cursor-pointer p-6 font-semibold text-white list-none"
+            >
               <span>Kokius mokėjimo būdus priimate?</span>
-              <svg class="w-6 h-6 text-cyan-500 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              <svg
+                class="w-6 h-6 text-cyan-500 transition-transform group-open:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
               </svg>
             </summary>
             <div class="px-6 pb-6 pt-2 text-gray-400">
-              Priimame grynuosius, visas pagrindines kredito korteles ir verslo čekius. 50% įmokos reikalaujama pradėti darbą individualiam projektam.
+              Priimame grynuosius, visas pagrindines kredito korteles ir verslo
+              čekius. 50% įmokos reikalaujama pradėti darbą individualiam
+              projektam.
             </div>
           </details>
 
-          <details class="group bg-gray-950 rounded-lg border border-gray-800 overflow-hidden">
-            <summary class="flex justify-between items-center cursor-pointer p-6 font-semibold text-white list-none">
+          <details
+            class="group bg-gray-950 rounded-lg border border-gray-800 overflow-hidden"
+          >
+            <summary
+              class="flex justify-between items-center cursor-pointer p-6 font-semibold text-white list-none"
+            >
               <span>Ar pristatymas įskaičiuotas į kainą?</span>
-              <svg class="w-6 h-6 text-cyan-500 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              <svg
+                class="w-6 h-6 text-cyan-500 transition-transform group-open:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
               </svg>
             </summary>
             <div class="px-6 pb-6 pt-2 text-gray-400">
-              Ne, pristatymas papildomas ir apskaičiuojamas pagal daikto dydį, svorį ir paskyrimą. Taip pat galime sutvarkyti vietinį atsiėmimą be mokesčio.
+              Ne, pristatymas papildomas ir apskaičiuojamas pagal daikto dydį,
+              svorį ir paskyrimą. Taip pat galime sutvarkyti vietinį atsiėmimą
+              be mokesčio.
             </div>
           </details>
         </div>
@@ -150,9 +244,12 @@ import { siteConfig } from '../data/site';
   <!-- CTA -->
   <section class="py-16 bg-gradient-to-br from-cyan-900 to-gray-900">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold text-white mb-4">Gauti Jūsų Individualų Pasiūlymą</h2>
+      <h2 class="text-3xl font-bold text-white mb-4">
+        Gauti Jūsų Individualų Pasiūlymą
+      </h2>
       <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-        Atsiųskite mums nuotraukas ir jūsų projekto detales tiksliam, neipi areigojų pasiūlymui per 24 valandas.
+        Atsiųskite mums nuotraukas ir jūsų projekto detales tiksliam, neipi
+        areigojų pasiūlymui per 24 valandas.
       </p>
       <a
         href="/contact"

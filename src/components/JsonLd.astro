@@ -1,98 +1,104 @@
 ---
-import { siteConfig } from '../data/site';
+import { siteConfig } from "../data/site";
 
 interface Props {
-  type: 'local-business' | 'service' | 'faq';
+  type: "local-business" | "service" | "faq";
 }
 
 const { type } = Astro.props;
 
 const getStructuredData = () => {
-  if (type === 'local-business') {
+  if (type === "local-business") {
     return {
-      '@context': 'https://schema.org',
-      '@type': 'LocalBusiness',
-      '@id': siteConfig.siteUrl,
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": siteConfig.siteUrl,
       name: siteConfig.brandName,
       description: siteConfig.description,
       url: siteConfig.siteUrl,
       telephone: siteConfig.phone,
       email: siteConfig.email,
       address: {
-        '@type': 'PostalAddress',
+        "@type": "PostalAddress",
         streetAddress: siteConfig.address,
         addressLocality: siteConfig.city,
         addressRegion: siteConfig.state,
         postalCode: siteConfig.zip,
-        addressCountry: 'US'
+        addressCountry: "US",
       },
       openingHoursSpecification: [
         {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Pirmadienis', 'Antradienis', 'Trečiadienis', 'Ketvirtadienis', 'Penktadienis'],
-          opens: '08:00',
-          closes: '18:00'
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Pirmadienis",
+            "Antradienis",
+            "Trečiadienis",
+            "Ketvirtadienis",
+            "Penktadienis",
+          ],
+          opens: "08:00",
+          closes: "18:00",
         },
         {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: 'Šeštadienis',
-          opens: '09:00',
-          closes: '15:00'
-        }
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: "Šeštadienis",
+          opens: "09:00",
+          closes: "15:00",
+        },
       ],
-      priceRange: '$$',
-      sameAs: siteConfig.socials.map(s => s.url)
+      priceRange: "$$",
+      sameAs: siteConfig.socials.map((s) => s.url),
     };
   }
 
-  if (type === 'service') {
+  if (type === "service") {
     return {
-      '@context': 'https://schema.org',
-      '@type': 'Service',
-      serviceType: 'Hidrografikos Vandens Pernešimo Spausdinimas',
+      "@context": "https://schema.org",
+      "@type": "Service",
+      serviceType: "Hidrografikos Vandens Pernešimo Spausdinimas",
       provider: {
-        '@type': 'LocalBusiness',
+        "@type": "LocalBusiness",
         name: siteConfig.brandName,
         url: siteConfig.siteUrl,
         telephone: siteConfig.phone,
         address: {
-          '@type': 'PostalAddress',
+          "@type": "PostalAddress",
           addressLocality: siteConfig.city,
           addressRegion: siteConfig.state,
-          addressCountry: 'LT'
-        }
+          addressCountry: "LT",
+        },
       },
       areaServed: {
-        '@type': 'Country',
-        name: 'Lietuva'
+        "@type": "Country",
+        name: "Lietuva",
       },
       hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: 'Hydrographics Services',
-        itemListElement: siteConfig.services.map(service => ({
-          '@type': 'Offer',
+        "@type": "OfferCatalog",
+        name: "Hydrographics Services",
+        itemListElement: siteConfig.services.map((service) => ({
+          "@type": "Offer",
           itemOffered: {
-            '@type': 'Service',
+            "@type": "Service",
             name: service.name,
-            description: service.description
-          }
-        }))
-      }
+            description: service.description,
+          },
+        })),
+      },
     };
   }
 
-  if (type === 'faq') {
+  if (type === "faq") {
     return {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: siteConfig.faqs.map(faq => ({
-        '@type': 'Question',
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: siteConfig.faqs.map((faq) => ({
+        "@type": "Question",
         name: faq.question,
         acceptedAnswer: {
-          '@type': 'Answer',
-          text: faq.answer
-        }
-      }))
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
     };
   }
 };
