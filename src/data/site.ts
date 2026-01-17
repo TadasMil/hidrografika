@@ -40,7 +40,7 @@ export interface SocialLink {
 export const siteConfig = {
   brandName: "Hidrografika",
   tagline: "Profesionalus Vandens Pernešimo Spausdinimas",
-  description: "Profesionalios hidrografikos paslaugos automobiliams, ginklams, sportinėms prekėms ir individualūs projektai. Ekspertų vandens pernešimo spausdinimas su aukščiausios kokybės apdaila.",
+  description: "Profesionalios hidrografikos paslaugos automobiliams, ginklams ir sportinėms prekėms. Aukščiausios kokybės vandens pernešimo spausdinimas.",
 
   phone: "+370 600 12345",
   email: "info@hidrografika.lt",
@@ -51,7 +51,7 @@ export const siteConfig = {
 
   hours: "Pr-Pn: 8:00-18:00, Št: 9:00-15:00",
 
-  siteUrl: "https://hidrografika.lt",
+  siteUrl: "https://tadasmil.github.io/hidrografika",
 
   socials: [
     {
