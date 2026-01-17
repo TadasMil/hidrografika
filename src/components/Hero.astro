@@ -11,158 +11,199 @@ interface Props {
 const {
   title,
   subtitle,
-  ctaText = "Get a Quote",
+  ctaText = "Gauti Pasiūlymą",
   ctaLink = "/contact",
   backgroundImage,
-  compact = false
+  compact = false,
 } = Astro.props;
 ---
 
-<section class={`relative overflow-hidden ${compact ? 'py-12 md:py-20' : 'py-20 md:py-32'}`} id="hero-section">
-  <!-- Background with gradient overlay -->
-  <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-cyan-900 opacity-50 hero-bg"></div>
-  {backgroundImage && (
-    <div
-      class="absolute inset-0 bg-cover bg-center opacity-20 hero-bg"
-      style={`background-image: url('${backgroundImage}')`}
-    ></div>
-  )}
-  <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent hero-bg"></div>
-
-  <!-- Floating particles -->
-  <div class="absolute inset-0 overflow-hidden">
-    <div class="particle particle-1"></div>
-    <div class="particle particle-2"></div>
-    <div class="particle particle-3"></div>
+<section
+  class={`relative overflow-hidden ${compact ? "py-12 md:py-20" : "py-20 md:py-32"}`}
+  id="hero-section"
+>
+  <!-- Background -->
+  <div
+    class="absolute inset-0 bg-linear-to-br from-gray-900 via-gray-800 to-cyan-900 opacity-50"
+  >
+  </div>
+  {
+    backgroundImage && (
+      <div
+        class="absolute inset-0 bg-cover bg-center opacity-20"
+        style={`background-image: url('${backgroundImage}')`}
+      />
+    )
+  }
+  <div
+    class="absolute inset-0 bg-linear-to-t from-gray-950 via-transparent to-transparent"
+  >
   </div>
 
   <!-- Content -->
   <div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto text-center">
-      <h1 class={`font-bold text-white mb-6 hero-title ${compact ? 'text-3xl md:text-4xl' : 'text-4xl md:text-5xl lg:text-6xl'}`}>
+      <h1
+        class={`font-bold text-white mb-6 hero-item opacity-0 translate-y-[30px] ${compact ? "text-3xl md:text-4xl" : "text-4xl md:text-5xl lg:text-6xl"}`}
+      >
         {title}
       </h1>
-      {subtitle && (
-        <p class={`text-gray-300 mb-8 leading-relaxed ${compact ? 'text-lg md:text-xl' : 'text-xl md:text-2xl'}`}>
-          {subtitle}
-        </p>
-      )}
-      {ctaText && (
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href={ctaLink}
-            class="inline-flex items-center justify-center px-8 py-4 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition-all shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 text-lg"
+
+      {
+        subtitle && (
+          <p
+            class={`text-gray-300 mb-8 leading-relaxed hero-item opacity-0 translate-y-[30px] ${compact ? "text-lg md:text-xl" : "text-xl md:text-2xl"}`}
           >
-            {ctaText}
-            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
-          <a
-            href="/gallery"
-            class="inline-flex items-center justify-center px-8 py-4 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 transition-all border border-gray-700 text-lg"
-          >
-            View Gallery
-          </a>
-        </div>
-      )}
+            {subtitle}
+          </p>
+        )
+      }
+
+      {
+        ctaText && (
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={ctaLink}
+              class="hero-item opacity-0 translate-y-[30px] inline-flex items-center justify-center px-8 py-4 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition-colors shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 text-lg"
+            >
+              {ctaText}
+              <svg
+                class="ml-2 w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="/gallery"
+              class="hero-item opacity-0 translate-y-[30px] inline-flex items-center justify-center px-8 py-4 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 transition-colors border border-gray-700 text-lg"
+            >
+              Peržiūrėti Galeriją
+            </a>
+          </div>
+        )
+      }
     </div>
+  </div>
+
+  <div
+    class="absolute inset-0 overflow-hidden pointer-events-none"
+    aria-hidden="true"
+  >
+    <div class="hero-bubble hero-bubble-1"></div>
+    <div class="hero-bubble hero-bubble-2"></div>
+    <div class="hero-bubble hero-bubble-3"></div>
+    <div class="hero-bubble hero-bubble-4"></div>
+    <div class="hero-bubble hero-bubble-5"></div>
   </div>
 </section>
 
 <style>
-  /* Hero title animation */
-  .hero-title {
-    animation: fadeInDown 1s ease-out;
-  }
-
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Floating particles */
-  .particle {
+  .hero-bubble {
     position: absolute;
-    background: rgba(6, 182, 212, 0.3);
-    border-radius: 50%;
-    pointer-events: none;
+    border-radius: 9999px;
+    background: rgba(6, 182, 212, 0.18);
+    filter: blur(0.5px);
+    will-change: transform;
+    animation: heroFloat 5s ease-in-out infinite; /* faster */
   }
 
-  .particle-1 {
-    width: 100px;
-    height: 100px;
+  .hero-bubble-1 {
+    width: 110px;
+    height: 110px;
+    left: 8%;
     top: 20%;
-    left: 10%;
-    animation: float 8s ease-in-out infinite;
+    animation-duration: 6s; /* faster */
   }
 
-  .particle-2 {
-    width: 150px;
-    height: 150px;
-    top: 60%;
-    right: 15%;
-    animation: float 10s ease-in-out infinite;
-    animation-delay: 2s;
+  .hero-bubble-2 {
+    width: 160px;
+    height: 160px;
+    right: 12%;
+    top: 55%;
+    animation-duration: 7s; /* faster */
+    animation-delay: -2s;
   }
 
-  .particle-3 {
-    width: 80px;
-    height: 80px;
-    bottom: 20%;
-    left: 50%;
-    animation: float 12s ease-in-out infinite;
-    animation-delay: 4s;
+  .hero-bubble-3 {
+    width: 90px;
+    height: 90px;
+    left: 48%;
+    bottom: 18%;
+    animation-duration: 6.5s; /* faster */
+    animation-delay: -3s;
   }
 
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0) translateX(0);
-    }
-    25% {
-      transform: translateY(-20px) translateX(10px);
+  .hero-bubble-4 {
+    width: 70px;
+    height: 70px;
+    right: 35%;
+    top: 18%;
+    animation-duration: 5.2s;
+    animation-delay: -1.5s;
+  }
+
+  .hero-bubble-5 {
+    width: 130px;
+    height: 130px;
+    left: 18%;
+    bottom: 10%;
+    animation-duration: 6.8s;
+    animation-delay: -2.6s;
+  }
+
+  @keyframes heroFloat {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) scale(1);
     }
     50% {
-      transform: translateY(-40px) translateX(-10px);
-    }
-    75% {
-      transform: translateY(-20px) translateX(10px);
+      transform: translate3d(18px, -22px, 0) scale(1.05);
     }
   }
 
-  /* Parallax effect will be handled by JS */
-  .hero-bg {
-    transition: transform 0.1s ease-out;
+  @media (prefers-reduced-motion: reduce) {
+    .hero-bubble {
+      animation: none !important;
+    }
   }
 </style>
 
 <script>
-  // Parallax effect on scroll
-  document.addEventListener('astro:page-load', () => {
-    const heroSection = document.getElementById('hero-section');
-    if (!heroSection) return;
+  import { inView, animate } from "motion";
 
-    const handleScroll = () => {
-      const scrolled = window.scrollY;
-      const parallaxElements = heroSection.querySelectorAll('.hero-bg');
+  const hero = document.getElementById("hero-section");
+  if (hero) {
+    const items = Array.from(hero.querySelectorAll(".hero-item"));
 
-      parallaxElements.forEach((el, index) => {
-        const speed = 0.5 + (index * 0.1);
-        (el as HTMLElement).style.transform = `translateY(${scrolled * speed}px)`;
-      });
-    };
+    items.forEach((el, i) => {
+      inView(
+        el,
+        () => {
+          // remove initial classes so they don't fight Motion (prevents weird offsets)
+          el.classList.remove("opacity-0", "translate-y-[30px]");
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    // Cleanup
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  });
+          animate(
+            el,
+            { opacity: [0, 1], y: [30, 0] },
+            {
+              duration: 0.7,
+              ease: [0.22, 1, 0.36, 1],
+              delay: 0.1 + i * 0.12,
+            },
+          );
+        },
+        { amount: "some" },
+      );
+    });
+  }
 </script>

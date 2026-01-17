@@ -1,9 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import { siteConfig } from '../data/site';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import { siteConfig } from "../data/site";
 
-const lastUpdated = 'January 17, 2026';
+const lastUpdated = "2026 sausio 17 d.";
 ---
 
 <Layout
@@ -14,43 +14,61 @@ const lastUpdated = 'January 17, 2026';
   <Hero
     title="Privatumo Politika"
     subtitle={`Paskutinį kartą atnaujinta: 2026 sausio 17 d.`}
-    ctaText={null}
+    ctaText={undefined}
     compact
   />
 
   <section class="py-16 bg-gray-950">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto prose prose-invert prose-lg">
-        <div class="bg-gray-900 rounded-lg p-8 border border-gray-800 text-gray-400 leading-relaxed space-y-6">
+        <div
+          class="bg-gray-900 rounded-lg p-8 border border-gray-800 text-gray-400 leading-relaxed space-y-6"
+        >
           <h2 class="text-2xl font-bold text-white">Įvadas</h2>
           <p>
-            {siteConfig.brandName} ("mes", "mūsų" ar "mums") įsipareigoja saugoti jūsų privatymą. Ši Privatumo Politika paaiškina, kaip renkame, naudojame, atskleidžiame ir saugome jūsų informaciją, kai lankotės mūsų svetainėje arba naudojatės mūsų paslaugomis.
+            {siteConfig.brandName} ("mes", "mūsų" ar "mums") įsipareigoja saugoti
+            jūsų privatymą. Ši Privatumo Politika paaiškina, kaip renkame, naudojame,
+            atskleidžiame ir saugome jūsų informaciją, kai lankotės mūsų svetainėje
+            arba naudojatės mūsų paslaugomis.
           </p>
 
-          <h2 class="text-2xl font-bold text-white mt-8">Informacija, Kurią Renkame</h2>
+          <h2 class="text-2xl font-bold text-white mt-8">
+            Informacija, Kurią Renkame
+          </h2>
           <h3 class="text-xl font-semibold text-white">Asmens Informacija</h3>
           <p>
-            Galime rinkti asmens informaciją, kurią savanoriškai pateikiate mums, kai:
+            Galime rinkti asmens informaciją, kurią savanoriškai pateikiate
+            mums, kai:
           </p>
           <ul class="list-disc pl-6 space-y-2">
-            <li>Prašote pasiūlymo arba susisiekiate su mumis per kontaktų formas</li>
+            <li>
+              Prašote pasiūlymo arba susisiekiate su mumis per kontaktų formas
+            </li>
             <li>Kuriate paskyrą arba pateikiate užsakymą</li>
-            <li>Prenumeruojate mūsų naujienlaiškio ar rinkodarios pranešimus</li>
+            <li>
+              Prenumeruojate mūsų naujienlaiškio ar rinkodarios pranešimus
+            </li>
             <li>Dalyvauji apklausose ar akcijose</li>
           </ul>
           <p>
-            Ši informacija gali apimti: vardą, el. pašto adresą, telefono numerį, pašto adresą ir mokėjimo informaciją.
+            Ši informacija gali apimti: vardą, el. pašto adresą, telefono
+            numerį, pašto adresą ir mokėjimo informaciją.
           </p>
 
-          <h3 class="text-xl font-semibold text-white mt-6">Automatiškai Renkama Informacija</h3>
+          <h3 class="text-xl font-semibold text-white mt-6">
+            Automatiškai Renkama Informacija
+          </h3>
           <p>
-            Kai lankotės mūsų svetainėje, galime automatiškai rinkti tam tikrą informaciją apie jūsų įrengĪnj, įskaitant informaciją apie jūsų žiniatinklio naršyklę, IP adresą, laiko juostą ir kai kuriuos jūsų įrenginyje įdiegtus slapukus.
+            Kai lankotės mūsų svetainėje, galime automatiškai rinkti tam tikrą
+            informaciją apie jūsų įrengĪnj, įskaitant informaciją apie jūsų
+            žiniatinklio naršyklę, IP adresą, laiko juostą ir kai kuriuos jūsų
+            įrenginyje įdiegtus slapukus.
           </p>
 
-          <h2 class="text-2xl font-bold text-white mt-8">Kaip Naudojame Jūsų Informaciją</h2>
-          <p>
-            Naudojame renkąmą informaciją, kad:
-          </p>
+          <h2 class="text-2xl font-bold text-white mt-8">
+            Kaip Naudojame Jūsų Informaciją
+          </h2>
+          <p>Naudojame renkąmą informaciją, kad:</p>
           <ul class="list-disc pl-6 space-y-2">
             <li>Apdorotume jūsų užsakymus ir suteiktume mūsų paslaugas</li>
             <li>Bendrauti su jumis apie jūsų projektus ir užklausas</li>
@@ -60,9 +78,12 @@ const lastUpdated = 'January 17, 2026';
             <li>Užkirsti kelią sukčiavimo ir palaikyti saugumą</li>
           </ul>
 
-          <h2 class="text-2xl font-bold text-white mt-8">Informacijos Dalinimas</h2>
+          <h2 class="text-2xl font-bold text-white mt-8">
+            Informacijos Dalinimas
+          </h2>
           <p>
-            Mes nepardduodame, nekeičiame ar nuomojame jūsų asmens informacijos trečiosioms šalims. Galime dalintis jūsų informacija su:
+            Mes nepardduodame, nekeičiame ar nuomojame jūsų asmens informacijos
+            trečiosioms šalims. Galime dalintis jūsų informacija su:
           </p>
           <ul class="list-disc pl-6 space-y-2">
             <li>Paslaugų teikėjais, kurie padeda veiti mūsų veiklą</li>
@@ -72,15 +93,18 @@ const lastUpdated = 'January 17, 2026';
 
           <h2 class="text-2xl font-bold text-white mt-8">Duomenų Saugumas</h2>
           <p>
-            Įffgyvendiname tinkamas technines ir organizacines saugumo priemones jūsų asmens informacijos apsaugai. Tačiau joks perdavimo internetu metodas nėra 100% saugus, ir mes negalime garantuoti absoliutaus saugumo.
+            Įgyvendiname tinkamas technines ir organizacines saugumo priemones,
+            siekdami apsaugoti jūsų asmens informaciją. Tačiau joks duomenų
+            perdavimo internetu metodas nėra 100 % saugus, todėl negalime
+            garantuoti absoliutaus saugumo.
           </p>
 
           <h2 class="text-2xl font-bold text-white mt-8">Jūsų Teisės</h2>
-          <p>
-            Turite teisę:
-          </p>
+          <p>Turite teisę:</p>
           <ul class="list-disc pl-6 space-y-2">
-            <li>Gauti prieigą prie asmens informacijos, kurią saugome apie jus</li>
+            <li>
+              Gauti prieigą prie asmens informacijos, kurią saugome apie jus
+            </li>
             <li>Prašyti neteisingos informacijos taisymo</li>
             <li>Prašyti jūsų asmens informacijos ištrynimo</li>
             <li>Atsisakyti rinkodaros pranešimų</li>
@@ -89,32 +113,64 @@ const lastUpdated = 'January 17, 2026';
 
           <h2 class="text-2xl font-bold text-white mt-8">Slapukai</h2>
           <p>
-            Naudojame slapukus ir panašius sekimo technologijas veiklos mūsų svetainėje sekimui ir tam tikros informacijos saugojimui. Galite nurodyti savo naršyklei atmesti visus slapukus ar nurodyti, kada slapukas siųstas.
+            Naudojame slapukus ir panašius sekimo technologijas veiklos mūsų
+            svetainėje sekimui ir tam tikros informacijos saugojimui. Galite
+            nurodyti savo naršyklei atmesti visus slapukus ar nurodyti, kada
+            slapukas siųstas.
           </p>
 
-          <h2 class="text-2xl font-bold text-white mt-8">Trečiųjų Šalių Nuorodos</h2>
+          <h2 class="text-2xl font-bold text-white mt-8">
+            Trečiųjų Šalių Nuorodos
+          </h2>
           <p>
-            Mūsų svetainėje gali būti nuorodų į trečiųjų šalių svetaines. Mes nesame atsakingi už šių išorinių svetainių privatumo praktikas. Raginame skaityti jų privatumo politikas.
+            Mūsų svetainėje gali būti nuorodų į trečiųjų šalių svetaines. Mes
+            nesame atsakingi už šių išorinių svetainių privatumo praktikas.
+            Raginame skaityti jų privatumo politikas.
           </p>
 
           <h2 class="text-2xl font-bold text-white mt-8">Vaikų Privatumas</h2>
           <p>
-            Mūsų paslaugos nėra skirtos asmenims, jaunesniems nei 18 metų. Mes sąmoningai nerenkame asmens informacijos iš vaikų, jaunesnių nei 18 metų. Jei sužinote, kad vaikas pateikė mums asmens informaciją, prašome susisiekti su mumis.
+            Mūsų paslaugos nėra skirtos asmenims, jaunesniems nei 18 metų. Mes
+            sąmoningai nerenkame asmens informacijos iš vaikų, jaunesnių nei 18
+            metų. Jei sužinote, kad vaikas pateikė mums asmens informaciją,
+            prašome susisiekti su mumis.
           </p>
 
-          <h2 class="text-2xl font-bold text-white mt-8">Privatumo Politikos Keitimai</h2>
+          <h2 class="text-2xl font-bold text-white mt-8">
+            Privatumo Politikos Keitimai
+          </h2>
           <p>
-            Galime atnaujinti šią Privatumo Politiką laikukuriais. Informuosime jus apie bet kokius keitimus paskelbdami naują Privatumo Politiką šiame puslapyje ir atnaujindami "Paskutinį kartą atnaujinta" datą.
+            Galime atnaujinti šią Privatumo Politiką laikukuriais. Informuosime
+            jus apie bet kokius keitimus paskelbdami naują Privatumo Politiką
+            šiame puslapyje ir atnaujindami "Paskutinį kartą atnaujinta" datą.
           </p>
 
-          <h2 class="text-2xl font-bold text-white mt-8">Susisiekite Su Mumis</h2>
+          <h2 class="text-2xl font-bold text-white mt-8">
+            Susisiekite Su Mumis
+          </h2>
           <p>
-            Jei turite klausimų apie šią Privatumo Politiką, susisiekite su mumis:
+            Jei turite klausimų apie šią Privatumo Politiką, susisiekite su
+            mumis:
           </p>
           <ul class="list-none space-y-2">
-            <li>El. paštas: <a href={`mailto:${siteConfig.email}`} class="text-cyan-400 hover:text-cyan-300">{siteConfig.email}</a></li>
-            <li>Telefonas: <a href={`tel:${siteConfig.phone}`} class="text-cyan-400 hover:text-cyan-300">{siteConfig.phone}</a></li>
-            <li>Adresas: {siteConfig.address}, {siteConfig.city}, {siteConfig.state} {siteConfig.zip}</li>
+            <li>
+              El. paštas: <a
+                href={`mailto:${siteConfig.email}`}
+                class="text-cyan-400 hover:text-cyan-300">{siteConfig.email}</a
+              >
+            </li>
+            <li>
+              Telefonas: <a
+                href={`tel:${siteConfig.phone}`}
+                class="text-cyan-400 hover:text-cyan-300">{siteConfig.phone}</a
+              >
+            </li>
+            <li>
+              Adresas: {siteConfig.address}, {siteConfig.city}, {
+                siteConfig.state
+              }
+              {siteConfig.zip}
+            </li>
           </ul>
         </div>
       </div>

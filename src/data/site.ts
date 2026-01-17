@@ -7,6 +7,17 @@ export interface Service {
   price?: string;
 }
 
+// Utility function to handle base URL for internal links
+export const withBase = (path: string): string => {
+  if (typeof window !== 'undefined') {
+    // Client-side: use the current base from the page
+    const base = document.querySelector('base')?.getAttribute('href') || '/';
+    return base === '/' ? path : `${base.replace(/\/$/, '')}${path}`;
+  }
+  // Server-side: return path as-is, let Astro handle it
+  return path;
+};
+
 export interface Location {
   id: string;
   name: string;

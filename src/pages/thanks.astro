@@ -9,7 +9,7 @@ import { siteConfig } from "../data/site";
   noindex={true}
 >
   <section
-    class="py-20 md:py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-cyan-900"
+    class="py-20 md:py-32 bg-linear-to-br from-gray-900 via-gray-800 to-cyan-900"
   >
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl mx-auto text-center">
@@ -46,7 +46,7 @@ import { siteConfig } from "../data/site";
           <div class="space-y-3 text-gray-400 text-left">
             <div class="flex items-start gap-3">
               <svg
-                class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-0.5"
+                class="w-6 h-6 text-cyan-500 shrink-0 mt-0.5"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -59,7 +59,7 @@ import { siteConfig } from "../data/site";
             </div>
             <div class="flex items-start gap-3">
               <svg
-                class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-0.5"
+                class="w-6 h-6 text-cyan-500 shrink-0 mt-0.5"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -74,7 +74,7 @@ import { siteConfig } from "../data/site";
             </div>
             <div class="flex items-start gap-3">
               <svg
-                class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-0.5"
+                class="w-6 h-6 text-cyan-500 shrink-0 mt-0.5"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -114,7 +114,7 @@ import { siteConfig } from "../data/site";
               Skambinkite Dabar
             </a>
             <a
-              href="/"
+              href={import.meta.env.BASE_URL}
               class="inline-flex items-center justify-center px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 transition-all border border-gray-700"
             >
               GrĄžiti Namo

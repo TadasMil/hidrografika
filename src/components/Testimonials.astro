@@ -14,8 +14,8 @@ const { testimonials } = siteConfig;
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      {testimonials.map(testimonial => (
-        <article class="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-cyan-500/50 transition-all">
+      {testimonials.map((testimonial, index) => (
+          <article class="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-cyan-500/50 transition-colors testimonial-card" data-testimonial-index={index}>
           <!-- Stars -->
           <div class="flex mb-4" aria-label={`${testimonial.rating} star rating`}>
             {Array.from({ length: testimonial.rating }).map(() => (
@@ -43,3 +43,42 @@ const { testimonials } = siteConfig;
     </div>
   </div>
 </section>
+
+<style>
+  .testimonial-card {
+    opacity: 0;
+    transform: translateY(50px);
+    will-change: transform, opacity;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .testimonial-card {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+</style>
+
+<script>
+  import { inView, animate } from "motion";
+
+  const cards = Array.from(document.querySelectorAll(".testimonial-card"));
+
+  cards.forEach((card, i) => {
+    inView(
+      card,
+      () => {
+        animate(
+          card,
+          { opacity: [0, 1], y: [50, 0] },
+          {
+            duration: 0.6,
+            ease: [0.22, 1, 0.36, 1],
+            delay: 0.2 + i * 0.1,
+          },
+        );
+      },
+      { amount: "some" },
+    );
+  });
+</script>

@@ -1,5 +1,5 @@
 ---
-import { siteConfig } from '../data/site';
+import { siteConfig } from "../data/site";
 
 interface Props {
   title: string;
@@ -7,16 +7,16 @@ interface Props {
   canonical?: string;
   ogImage?: string;
   noindex?: boolean;
-  type?: 'website' | 'article';
+  type?: "website" | "article";
 }
 
 const {
   title,
   description = siteConfig.description,
   canonical,
-  ogImage = '/og-image.jpg',
+  ogImage = "/og-image.png",
   noindex = false,
-  type = 'website'
+  type = "website",
 } = Astro.props;
 
 const fullTitle = title.includes(siteConfig.brandName)
@@ -54,8 +54,13 @@ const ogImageUrl = new URL(ogImage, siteConfig.siteUrl).href;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={ogImageUrl} />
 
-<!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<!-- Favicon and Icons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.json" />
+<meta name="theme-color" content="#06b6d4" />
 
 <!-- Additional SEO -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />

@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import { siteConfig } from "../data/site";
 
-const lastUpdated = "January 17, 2026";
+const lastUpdated = "2026 sausio 17 d.";
 ---
 
 <Layout
@@ -14,7 +14,7 @@ const lastUpdated = "January 17, 2026";
   <Hero
     title="Paslaugos Sąlygos"
     subtitle={`Paskutinį kartą atnaujinta: 2026 sausio 17 d.`}
-    ctaText={null}
+    ctaText={undefined}
     compact
   />
 
@@ -187,12 +187,14 @@ const lastUpdated = "January 17, 2026";
             <li>
               El. paštas: <a
                 href={`mailto:${siteConfig.email}`}
-                class="text-cyan-400 hover:text-cyan-300">{siteConfig.email}</a>
+                class="text-cyan-400 hover:text-cyan-300">{siteConfig.email}</a
+              >
             </li>
             <li>
               Telefonas: <a
                 href={`tel:${siteConfig.phone}`}
-                class="text-cyan-400 hover:text-cyan-300">{siteConfig.phone}</a>
+                class="text-cyan-400 hover:text-cyan-300">{siteConfig.phone}</a
+              >
             </li>
             <li>
               Adresas: {siteConfig.address}, {siteConfig.city}, {

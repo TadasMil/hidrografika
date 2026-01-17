@@ -5,7 +5,8 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   output: 'static',
   site: 'https://tadasmil.github.io',
-  base: '/hidrografika',
+  base: process.env.NODE_ENV === 'production' ? '/hidrografika' : undefined,
+  trailingSlash: 'always',
 
   vite: {
     plugins: [tailwindcss()],

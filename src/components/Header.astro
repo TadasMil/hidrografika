@@ -1,49 +1,63 @@
 ---
-import { siteConfig } from '../data/site';
+import { siteConfig } from "../data/site";
 
+const base = import.meta.env.BASE_URL;
 const navItems = [
-  { href: '/', label: 'Pradžia' },
-  { href: '/services', label: 'Paslaugos' },
-  { href: '/gallery', label: 'Galerija' },
-  { href: '/pricing', label: 'Kainos' },
-  { href: '/about', label: 'Apie Mus' },
-  { href: '/faq', label: 'DUK' },
-  { href: '/contact', label: 'Kontaktai' }
+  { href: `${base}`, label: "Pradžia" },
+  { href: `${base}services/`, label: "Paslaugos" },
+  { href: `${base}gallery/`, label: "Galerija" },
+  { href: `${base}pricing/`, label: "Kainos" },
+  { href: `${base}about/`, label: "Apie Mus" },
+  { href: `${base}faq/`, label: "DUK" },
+  { href: `${base}contact/`, label: "Kontaktai" },
 ];
 
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50 backdrop-blur-md bg-opacity-95">
-  <nav class="container mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
-    <div class="flex items-center justify-between h-16 md:h-20">
+<header
+  class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50 backdrop-blur-md bg-opacity-95"
+>
+  <nav
+    class="container mx-auto px-4 sm:px-6 lg:px-8"
+    aria-label="Pagrindinis navigacijas"
+  >
+    <div class="flex items-center justify-between h-24">
       <!-- Logo -->
-      <div class="flex-shrink-0">
-        <a href="/" class="text-xl md:text-2xl font-bold text-white hover:text-cyan-400 transition-colors">
-          {siteConfig.brandName}
+      <div class="shrink-0">
+        <a href={base} class="hover:opacity-80 transition-opacity">
+          <img
+            src="/logo.png"
+            alt={siteConfig.brandName}
+            class="h-28 md:h-32 w-auto"
+            width="256"
+            height="256"
+          />
         </a>
       </div>
 
       <!-- Desktop Navigation -->
       <div class="hidden lg:flex items-center space-x-1">
-        {navItems.map(item => (
-          <a
-            href={item.href}
-            class={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-              currentPath === item.href
-                ? 'text-cyan-400 bg-gray-800'
-                : 'text-gray-300 hover:text-white hover:bg-gray-800'
-            }`}
-          >
-            {item.label}
-          </a>
-        ))}
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                currentPath === item.href
+                  ? "text-cyan-400 bg-gray-800"
+                  : "text-gray-300 hover:text-white hover:bg-gray-800"
+              }`}
+            >
+              {item.label}
+            </a>
+          ))
+        }
       </div>
 
       <!-- CTA Button - Desktop -->
       <div class="hidden lg:block">
         <a
-          href="/contact"
+          href={`${base}contact/`}
           class="inline-flex items-center px-6 py-2.5 bg-cyan-500 text-white font-semibold rounded-md hover:bg-cyan-600 transition-colors shadow-lg shadow-cyan-500/30"
         >
           Gauti Pasiūlymą
@@ -57,32 +71,63 @@ const currentPath = Astro.url.pathname;
         class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-500"
         aria-expanded="false"
         aria-controls="mobile-menu"
-        aria-label="Toggle navigation menu"
+        aria-label="Perjungti navigacijos meniu"
       >
-        <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        <!-- Hamburger Icon -->
+        <svg
+          id="hamburger-icon"
+          class="block h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+        <!-- Close Icon -->
+        <svg
+          id="close-icon"
+          class="hidden h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
     </div>
 
     <!-- Mobile Navigation Menu -->
-    <div id="mobile-menu" class="hidden lg:hidden pb-4">
-      <div class="space-y-1">
-        {navItems.map(item => (
-          <a
-            href={item.href}
-            class={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-              currentPath === item.href
-                ? 'text-cyan-400 bg-gray-800'
-                : 'text-gray-300 hover:text-white hover:bg-gray-800'
-            }`}
-          >
-            {item.label}
-          </a>
-        ))}
+    <div id="mobile-menu" class="hidden lg:hidden">
+      <div
+        class="px-2 pt-2 pb-3 space-y-1 bg-gray-900 border-t border-gray-800"
+      >
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                currentPath === item.href
+                  ? "text-cyan-400 bg-gray-800"
+                  : "text-gray-300 hover:text-white hover:bg-gray-800"
+              }`}
+            >
+              {item.label}
+            </a>
+          ))
+        }
         <a
-          href="/contact"
-          class="block text-center mt-4 px-6 py-2.5 bg-cyan-500 text-white font-semibold rounded-md hover:bg-cyan-600 transition-colors"
+          href={`${base}contact/`}
+          class="block text-center mt-4 mx-3 px-6 py-2.5 bg-cyan-500 text-white font-semibold rounded-md hover:bg-cyan-600 transition-colors shadow-lg shadow-cyan-500/30"
         >
           Gauti Pasiūlymą
         </a>
@@ -92,17 +137,45 @@ const currentPath = Astro.url.pathname;
 </header>
 
 <script>
-  // Mobile menu toggle
-  document.addEventListener('astro:page-load', () => {
-    const button = document.getElementById('mobile-menu-button');
-    const menu = document.getElementById('mobile-menu');
+  // Mobile menu toggle functionality
+  function initMobileMenu() {
+    const button = document.getElementById("mobile-menu-button");
+    const menu = document.getElementById("mobile-menu");
+    const hamburgerIcon = document.getElementById("hamburger-icon");
+    const closeIcon = document.getElementById("close-icon");
 
-    if (button && menu) {
-      button.addEventListener('click', () => {
-        const isExpanded = button.getAttribute('aria-expanded') === 'true';
-        button.setAttribute('aria-expanded', String(!isExpanded));
-        menu.classList.toggle('hidden');
+    if (button && menu && hamburgerIcon && closeIcon) {
+      button.addEventListener("click", () => {
+        const isExpanded = button.getAttribute("aria-expanded") === "true";
+        const newExpanded = !isExpanded;
+
+        // Update button state
+        button.setAttribute("aria-expanded", String(newExpanded));
+
+        // Toggle menu visibility
+        menu.classList.toggle("hidden");
+
+        // Toggle icons
+        hamburgerIcon.classList.toggle("hidden");
+        closeIcon.classList.toggle("hidden");
+      });
+
+      // Close menu when clicking on a navigation link
+      const navLinks = menu.querySelectorAll("a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          button.setAttribute("aria-expanded", "false");
+          menu.classList.add("hidden");
+          hamburgerIcon.classList.remove("hidden");
+          closeIcon.classList.add("hidden");
+        });
       });
     }
-  });
+  }
+
+  // Initialize on page load
+  document.addEventListener("DOMContentLoaded", initMobileMenu);
+
+  // Re-initialize after Astro page transitions
+  document.addEventListener("astro:page-load", initMobileMenu);
 </script>
