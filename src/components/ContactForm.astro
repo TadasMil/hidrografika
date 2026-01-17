@@ -1,5 +1,11 @@
 ---
-// Contact form - frontend only, redirects to /thanks
+// Contact form - frontend only
+import { siteConfig } from "../data/site";
+
+const emailTo = siteConfig.email;
+
+// Defaults (optional)
+const defaultSubject = "Užklausa dėl hidrografikos";
 ---
 
 <section class="py-16 bg-gray-900">
@@ -16,6 +22,7 @@
 
       <form
         id="contact-form"
+        method="post"
         class="space-y-6 bg-gray-800 p-8 rounded-lg border border-gray-700"
       >
         <!-- Name -->
@@ -177,24 +184,80 @@
   </div>
 </section>
 
-<script>
-  document.addEventListener("astro:page-load", () => {
-    const form = document.getElementById("contact-form") as HTMLFormElement;
+<script
+  define:vars={{
+    emailTo: siteConfig.email,
+    defaultSubject: "Užklausa dėl hidrografikos",
+  }}
+>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contact-form");
+    if (!form) return;
 
-    if (form) {
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-        // In a real application, you would send the form data to a server here
-        // For this demo, we just redirect to the thanks page
+      // Native validation messages
+      if (typeof form.reportValidity === "function" && !form.reportValidity())
+        return;
 
-        // Simulate form submission
-        const formData = new FormData(form);
-        console.log("Form data:", Object.fromEntries(formData));
+      const fd = new FormData(form);
 
-        // Redirect to thanks page
-        window.location.href = "/thanks";
-      });
-    }
+      const name = String(fd.get("name") || "").trim();
+      const fromEmail = String(fd.get("email") || "").trim();
+      const phone = String(fd.get("phone") || "").trim();
+      const itemType = String(fd.get("item-type") || "").trim();
+      const message = String(fd.get("message") || "").trim();
+      const contactMethod = String(fd.get("contact-method") || "email").trim();
+
+      const itemTypeLabel =
+        itemType === "automotive"
+          ? "Automobilių Dalys"
+          : itemType === "firearms"
+            ? "Ginklai ir Taktinė Įranga"
+            : itemType === "sporting"
+              ? "Sportinės Prekės"
+              : itemType === "industrial"
+                ? "Pramonės ir Individualūs"
+                : itemType === "other"
+                  ? "Kitas"
+                  : itemType || "—";
+
+      const subject = `${defaultSubject} – ${itemTypeLabel}`;
+
+      const body = [
+        "Sveiki,",
+        "",
+        "Nauja užklausa iš kontaktų formos:",
+        "",
+        `Vardas: ${name}`,
+        `El. paštas: ${fromEmail}`,
+        `Telefonas: ${phone}`,
+        `Daikto tipas: ${itemTypeLabel}`,
+        `Pageidaujamas bendravimas: ${contactMethod}`,
+        "",
+        "Projekto detalės:",
+        message,
+        "",
+      ].join("\n");
+
+      const gmailUrl =
+        "https://mail.google.com/mail/?view=cm&fs=1" +
+        `&to=${encodeURIComponent(emailTo)}` +
+        `&su=${encodeURIComponent(subject)}` +
+        `&body=${encodeURIComponent(body)}`;
+
+      const mailtoUrl =
+        `mailto:${emailTo}` +
+        `?subject=${encodeURIComponent(subject)}` +
+        `&body=${encodeURIComponent(body)}`;
+
+      // Try Gmail first; fallback to mailto if popup blocked
+      const win = window.open(gmailUrl, "_blank", "noopener,noreferrer");
+      if (!win) window.location.href = mailtoUrl;
+
+      // Optional: redirect after launching (usually NOT needed)
+      // window.location.href = "/thanks";
+    });
   });
 </script>

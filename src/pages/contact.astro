@@ -3,6 +3,34 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import ContactForm from "../components/ContactForm.astro";
 import { siteConfig } from "../data/site";
+
+// ---- Email launch options ----
+const emailTo = siteConfig.email;
+
+// You can tweak these defaults anytime
+const defaultSubject = "Užklausa dėl hidrografikos";
+const defaultBody = `Sveiki,
+
+Norėčiau pasiteirauti apie...
+
+Ačiū!
+`;
+
+// 1) Mailto (opens user's default mail client)
+const mailtoHref =
+  `mailto:${emailTo}` +
+  `?subject=${encodeURIComponent(defaultSubject)}` +
+  `&body=${encodeURIComponent(defaultBody)}`;
+
+// 2) Open Gmail Inbox (works if user is signed in)
+const gmailInboxHref = "https://mail.google.com/mail/u/0/#inbox";
+
+// 3) Open Gmail Compose (prefilled fields; works best if user is signed in)
+const gmailComposeHref =
+  "https://mail.google.com/mail/?view=cm&fs=1" +
+  `&to=${encodeURIComponent(emailTo)}` +
+  `&su=${encodeURIComponent(defaultSubject)}` +
+  `&body=${encodeURIComponent(defaultBody)}`;
 ---
 
 <Layout
@@ -75,14 +103,93 @@ import { siteConfig } from "../data/site";
                 ></path>
               </svg>
             </div>
+
             <h3 class="text-lg font-bold text-white mb-2">El. paštas</h3>
+
+            <!-- Keep the plain email visible/copyable -->
             <a
-              href={`mailto:${siteConfig.email}`}
+              href={mailtoHref}
               class="text-cyan-400 hover:text-cyan-300 transition-colors break-all"
+              aria-label="Rašyti el. laišką"
             >
               {siteConfig.email}
             </a>
+
             <p class="text-sm text-gray-500 mt-2">Atsakymas per 24 val.</p>
+
+            <!-- Three launch options -->
+            <div class="mt-5 flex flex-col gap-3">
+              <!-- 1) Mailto -->
+              <a
+                href={mailtoHref}
+                class="inline-flex items-center justify-center gap-2 rounded-md border border-gray-700 bg-gray-800 px-4 py-2 text-sm font-medium text-gray-100 hover:bg-gray-750 hover:border-gray-600 transition-colors"
+              >
+                <svg
+                  class="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M4 4h16v16H4z"></path>
+                  <path d="M22 6l-10 7L2 6"></path>
+                </svg>
+                Rašyti el. laišką
+              </a>
+
+              <!-- 3) Gmail compose -->
+              <a
+                href={gmailComposeHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 rounded-md border border-cyan-500/40 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-300 hover:bg-cyan-500/15 hover:border-cyan-400/60 transition-colors"
+              >
+                <svg
+                  class="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 20h9"></path>
+                  <path
+                    d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4 12.5-12.5z"
+                  ></path>
+                </svg>
+                Rašyti per Gmail
+              </a>
+
+              <!-- 2) Gmail inbox -->
+              <a
+                href={gmailInboxHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 rounded-md border border-gray-700 bg-gray-800 px-4 py-2 text-sm font-medium text-gray-100 hover:bg-gray-750 hover:border-gray-600 transition-colors"
+              >
+                <svg
+                  class="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M22 12h-6l-2 3h-4l-2-3H2"></path>
+                  <path
+                    d="M5.45 5.11L2 12v6a2 2 0 002 2h16a2 2 0 002-2v-6l-3.45-6.89A2 2 0 0016.76 4H7.24a2 2 0 00-1.79 1.11z"
+                  ></path>
+                </svg>
+                Atidaryti Gmail (Inbox)
+              </a>
+            </div>
           </article>
 
           <!-- Location -->
